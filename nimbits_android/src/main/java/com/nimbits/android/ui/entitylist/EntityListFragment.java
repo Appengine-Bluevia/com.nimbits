@@ -1,18 +1,17 @@
 package com.nimbits.android.ui.entitylist;
 
 import android.app.Activity;
-
+import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
-import com.nimbits.android.content.ContentProvider;
 import com.nimbits.android.R;
+import com.nimbits.android.content.ContentProvider;
 import com.nimbits.cloudplatform.client.enums.EntityType;
 import com.nimbits.cloudplatform.client.model.entity.Entity;
 import com.nimbits.cloudplatform.client.model.entity.EntityName;

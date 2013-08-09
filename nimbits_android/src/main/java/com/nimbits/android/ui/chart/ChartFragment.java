@@ -1,22 +1,20 @@
 package com.nimbits.android.ui.chart;
 
 import android.app.Activity;
-
+import android.app.Fragment;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ListView;
+import com.nimbits.android.R;
 import com.nimbits.android.content.ContentProvider;
 import com.nimbits.android.main.async.SeriesTask;
 import com.nimbits.android.ui.entitylist.EntityListAdapter;
 import com.nimbits.android.ui.entitylist.EntityListener;
-import com.nimbits.android.R;
 import com.nimbits.cloudplatform.client.model.entity.Entity;
-import com.nimbits.cloudplatform.client.model.point.Point;
 import com.nimbits.cloudplatform.client.model.value.Value;
 import org.apache.commons.lang3.Range;
 

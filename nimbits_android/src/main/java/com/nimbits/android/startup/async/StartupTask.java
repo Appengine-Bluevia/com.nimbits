@@ -24,6 +24,7 @@ import java.util.List;
 public class StartupTask extends AsyncTask<Object, User, List<User>> {
 
     private StartupListener mListener;
+    private final static String TAG = "StartupTask";
     private Context context;
     public interface StartupListener {
         public void onLoginSuccess(List<User> response);
@@ -61,7 +62,8 @@ public class StartupTask extends AsyncTask<Object, User, List<User>> {
             Nimbits.isExternalStorageAvailable = (isExternalStorageAvailable());
             return Transaction.getSession();
         } catch (Exception e) {
-            Log.e(this.getClass().getSimpleName(), e.getMessage());
+
+            Log.e(TAG, e.getMessage());
             return Collections.emptyList();
 
         }

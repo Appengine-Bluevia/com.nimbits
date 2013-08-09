@@ -14,13 +14,35 @@
         <module>../nimbits_lib</module>
 
     </modules>
+
+    <repositories>
+        <repository>
+            <id>achartengine</id>
+            <name>Public AChartEngine repository</name>
+            <url>https://repository-achartengine.forge.cloudbees.com/snapshot/</url>
+        </repository>
+
+        <repository>
+            <id>gcm-server-repository</id>
+            <url>https://raw.github.com/slorber/gcm-server-repository/master/releases/</url>
+        </repository>
+    </repositories>
+
+
     <dependencies>
-        <!--<dependency>-->
-            <!--<groupId>com.google.android</groupId>-->
-            <!--<artifactId>support-v4</artifactId>-->
-            <!--<scope>compile</scope>-->
-            <!--<version>r13</version>-->
-        <!--</dependency>-->
+
+        <dependency>
+            <groupId>com.google.android.gcm</groupId>
+            <artifactId>gcm-client</artifactId>
+            <version>1.0.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.android</groupId>
+            <artifactId>support-v4</artifactId>
+            <version>r7</version>
+        </dependency>
+
 
         <dependency>
             <groupId>nimbits_lib</groupId>
@@ -28,13 +50,13 @@
             <version>1.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
+
         <dependency>
             <groupId>nimbits_model</groupId>
             <artifactId>nimbits_model</artifactId>
             <version>1.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
-
 
         <dependency>
             <groupId>com.google.guava</groupId>
@@ -46,11 +68,9 @@
         <dependency>
             <groupId>org.achartengine</groupId>
             <artifactId>achartengine</artifactId>
-            <version>1.0.0</version>
-            <scope>system</scope>
-            <systemPath>/mnt/devel/dep/aChartEngine/achartengine-1.1.0.jar</systemPath>
+            <version>1.1.0</version>
+            <scope>compile</scope>
         </dependency>
-
 
         <dependency>
             <groupId>com.google.code.gson</groupId>
@@ -58,6 +78,7 @@
             <version>2.2.2</version>
             <scope>compile</scope>
         </dependency>
+
         <dependency>
             <groupId>commons-lang</groupId>
             <artifactId>commons-lang</artifactId>
@@ -71,18 +92,15 @@
             <version>3.0.1</version>
             <scope>compile</scope>
         </dependency>
+
+
         <dependency>
             <groupId>com.google.android</groupId>
             <artifactId>android</artifactId>
             <version>4.1.1.4</version>
             <scope>provided</scope>
         </dependency>
-        <dependency>
-            <groupId>com.google.android</groupId>
-            <artifactId>android</artifactId>
-            <version>4.1.1.4</version>
-            <scope>provided</scope>
-        </dependency>
+
         <dependency>
             <groupId>de.akquinet.android.androlog</groupId>
             <artifactId>androlog</artifactId>

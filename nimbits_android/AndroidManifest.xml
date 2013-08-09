@@ -67,7 +67,7 @@
 
 
         <activity android:name="com.nimbits.android.HomeActivity"
-                  android:theme="@style/Theme.AppCompat.Light"
+
 
             />
 

@@ -1,13 +1,13 @@
 package com.nimbits.android;
 
 
+import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -17,12 +17,12 @@ import android.widget.FrameLayout;
 import android.widget.ProgressBar;
 import com.google.android.gcm.GCMRegistrar;
 import com.nimbits.android.content.ContentProvider;
-import com.nimbits.android.ui.chart.ChartFragment;
-import com.nimbits.android.ui.entitylist.EntityListFragment;
 import com.nimbits.android.main.async.AddUpdateEntityTask;
 import com.nimbits.android.main.async.LoadMainTask;
-import com.nimbits.android.ui.entitylist.EntityListener;
+import com.nimbits.android.ui.chart.ChartFragment;
 import com.nimbits.android.ui.dialog.EntityNameDialog;
+import com.nimbits.android.ui.entitylist.EntityListFragment;
+import com.nimbits.android.ui.entitylist.EntityListener;
 import com.nimbits.cloudplatform.Nimbits;
 import com.nimbits.cloudplatform.client.enums.EntityType;
 import com.nimbits.cloudplatform.client.model.entity.Entity;
@@ -32,7 +32,7 @@ import com.nimbits.cloudplatform.client.model.entity.EntityName;
 
 import java.util.List;
 
-public class HomeActivity extends ActionBarActivity implements EntityListener {
+public class HomeActivity extends Activity implements EntityListener {
     private ProgressBar progressBar;
     private EntityListFragment entityListFragment;
     private ChartFragment chartFragment;
@@ -61,7 +61,7 @@ public class HomeActivity extends ActionBarActivity implements EntityListener {
         frame.removeAllViews();
         entityListFragment =  EntityListFragment.getInstance(this);
         entityListFragment.setArguments(getIntent().getExtras());
-        getSupportFragmentManager().beginTransaction().add(R.id.main_frame, entityListFragment).commit();
+        getFragmentManager().beginTransaction().add(R.id.main_frame, entityListFragment).commit();
         if (ContentProvider.getTree().isEmpty()) {
             loadTree();
         }
@@ -117,11 +117,11 @@ public class HomeActivity extends ActionBarActivity implements EntityListener {
         switch (item.getItemId()) {
             case R.id.action_new_folder:
                 dialog = new EntityNameDialog(ContentProvider.currentEntity, EntityType.category);
-                dialog.show(getSupportFragmentManager(), "NoticeDialogFragment");
+                dialog.show(getFragmentManager(), "NoticeDialogFragment");
                 return true;
             case R.id.action_new_point:
                 dialog = new EntityNameDialog(ContentProvider.currentEntity, EntityType.point);
-                dialog.show(getSupportFragmentManager(), "NoticeDialogFragment");
+                dialog.show(getFragmentManager(), "NoticeDialogFragment");
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -155,7 +155,7 @@ public class HomeActivity extends ActionBarActivity implements EntityListener {
         frame.removeAllViews();
         chartFragment =  ChartFragment.getInstance(this);
         chartFragment.setArguments(getIntent().getExtras());
-        getSupportFragmentManager().beginTransaction().add(R.id.data_frame, chartFragment).commit();
+        getFragmentManager().beginTransaction().add(R.id.data_frame, chartFragment).commit();
         //chartFragment.getSeries(entity);
     }
 
